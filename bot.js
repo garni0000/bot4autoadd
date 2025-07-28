@@ -263,7 +263,7 @@ function generateRandomAd() {
     return {
       type: 'video',
       url: 'https://t.me/freesolkah/2',
-      caption: `💸 *100$ par jour ?* Facile quand tu sais comment jouer.\n\n🏱 REGARDE le tuto pour créer un compte authentique et profiter des hacks...\n\n🔥 Rejoins aussi notre canal privé ➤ @free221cash`,
+      caption: `💸 *100$ par jour ?* Facile quand tu sais comment jouer.\n\n🏱 REGARDE le tuto pour créer un compte authentique et profiter des hacks...\n\n🔥 Rejoins aussi notre canal privé ➤ https://t.me/+omaJ1VufdHs1NGZk`,
       parse_mode: 'Markdown',
       buttons: [
         [{ text: '🚀 Créer mon compte', url: 'https://bit.ly/3NJ4vy0' }],
