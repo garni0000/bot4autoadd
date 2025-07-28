@@ -10,7 +10,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 const DB_NAME = process.env.DB_NAME;
 const COLLECTION_NAME = 'telegram_users';
 const VIDEO_URL = process.env.VIDEO_URL;
-const PROMO_CODE = 'Free22';
+const PROMO_CODE = 'Free221';
 
 // --- Configuration Express ---
 const app = express();
