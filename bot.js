@@ -224,6 +224,122 @@ start();
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
 
+
+
+
+
+
+
+
+
+// ... Tout le code existant au-dessus ne change pas
+
+// --- Ajout de la logique ADS dynamique ---
+
+const captionsGameplay = [
+  `👀 Ce qu'ils ne veulent pas que tu saches... Ce jeu est en train de changer des vies en silence.\n\n🍏 C’est *Apple of Fortune*, et il suffit de comprendre la logique pour encaisser.\n\n➡️ Crée ton compte ici : [Clique ici](https://bit.ly/3NJ4vy0)`,
+  `🧠 Tout le monde pense que c’est de la chance... mais ceux qui testent comprennent vite : *Apple of Fortune*, c’est une stratégie mentale.\n\nPrêt à essayer ? [Créer un compte](https://bit.ly/3NJ4vy0)`,
+  `💡 Joue comme un stratège, pas comme un parieur. *Apple of Fortune* récompense ceux qui osent réfléchir.\n\nCommence maintenant : [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`,
+  `😶 On peut regarder les autres réussir… ou simplement prendre 2 min pour s’y mettre aussi.\n\n🍏 Apple of Fortune t’attend ici : [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`,
+  `🚪 Ils ont ouvert la porte, mais peu osent rentrer. Apple of Fortune c’est pour ceux qui *jouent avec la tête*, pas avec la chance.\n\n➡️ Crée ton compte ici : [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`
+];
+
+const captionsCapture = [
+  `📸 Ils partagent leur preuve. Apple of Fortune, ce n’est pas que du rêve. C’est une *routine* pour ceux qui s’y mettent sérieusement.\n\n🎯 À toi de jouer : [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`,
+  `🔍 Une capture ne ment pas. Il faut juste OSER tenter une fois. Les résultats parlent d’eux-mêmes.\n\n🎰 Crée ton compte ici : [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`,
+  `🧠 La vraie stratégie, c’est celle qu’on ne crie pas sur tous les toits. Mais tu peux la découvrir en testant maintenant.\n\nApple of Fortune ici ➤ [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`,
+  `📲 Pendant que tu scrolles… d’autres enchaînent les réussites en silence.\n\n🍏 Tente Apple of Fortune maintenant ➤ [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`,
+  `🔐 Ce qui est rentable reste souvent discret. Mais tu viens de trouver la faille.\n\n➡️ Ouvre ton compte ici : [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`
+];
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function generateRandomAd() {
+  const random = Math.random();
+
+  if (random < 0.3) {
+    return {
+      type: 'video',
+      url: 'https://t.me/freesolkah/2',
+      caption: `💸 *100$ par jour ?* Facile quand tu sais comment jouer.\n\n🏱 REGARDE le tuto pour créer un compte authentique et profiter des hacks...\n\n🔥 Rejoins aussi notre canal privé ➤ @free221cash`,
+      parse_mode: 'Markdown',
+      buttons: [
+        [{ text: '🚀 Créer mon compte', url: 'https://bit.ly/3NJ4vy0' }],
+        [{ text: '🔒 Canal VIP', url: 'https://t.me/solkah_bot' }]
+      ]
+    };
+  }
+
+  if (random < 0.65) {
+    const videoId = getRandomInt(3, 23);
+    const caption = captionsGameplay[getRandomInt(0, captionsGameplay.length - 1)];
+
+    return {
+      type: 'video',
+      url: `https://t.me/freesolkah/${videoId}`,
+      caption,
+      parse_mode: 'Markdown',
+      buttons: [
+        [{ text: '🍏 Jouer maintenant', url: 'https://bit.ly/3NJ4vy0' }],
+        [{ text: '📲 Astuces + Bot', url: 'https://t.me/solkah_bot' }]
+      ]
+    };
+  }
+
+  const photoId = getRandomInt(25, 30);
+  const caption = captionsCapture[getRandomInt(0, captionsCapture.length - 1)];
+
+  return {
+    type: 'photo',
+    url: `https://t.me/freesolkah/${photoId}`,
+    caption,
+    parse_mode: 'Markdown',
+    buttons: [
+      [{ text: '🎯 Essayer Apple of Fortune', url: 'https://bit.ly/3NJ4vy0' }],
+      [{ text: '🎓 Canal stratégique', url: 'https://t.me/solkah_bot' }]
+    ]
+  };
+}
+
+async function envoyerPubPeriodique() {
+  const ad = generateRandomAd();
+  const users = await db.collection(COLLECTION_NAME).find({ status: 'approved' }).toArray();
+
+  for (const user of users) {
+    try {
+      if (ad.type === 'video') {
+        await bot.telegram.sendVideo(user.telegram_id, ad.url, {
+          caption: ad.caption,
+          parse_mode: ad.parse_mode,
+          reply_markup: { inline_keyboard: ad.buttons }
+        });
+      } else if (ad.type === 'photo') {
+        await bot.telegram.sendPhoto(user.telegram_id, ad.url, {
+          caption: ad.caption,
+          parse_mode: ad.parse_mode,
+          reply_markup: { inline_keyboard: ad.buttons }
+        });
+      }
+      await sleep(100);
+    } catch (e) {
+      if (e.code !== 403) console.error(`Erreur pub :`, e);
+    }
+  }
+
+  console.log('✅ Pub dynamique envoyée');
+}
+
+// Planification auto + commande test
+setInterval(envoyerPubPeriodique, 6 * 60 * 60 * 1000); // toutes les 6 heures
+
+bot.command('test', async (ctx) => {
+  if (!isAdmin(ctx.from.id)) return;
+  await envoyerPubPeriodique();
+  await ctx.reply('🚀 Pub envoyée en test.');
+});
+
 // --- Serveur HTTP ---
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
