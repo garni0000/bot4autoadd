@@ -283,7 +283,7 @@ function generateRandomAd() {
       parse_mode: 'Markdown',
       buttons: [
         [{ text: '🍏 Jouer maintenant', url: 'https://bit.ly/3NJ4vy0' }],
-        [{ text: '📲Ouvrir le Bot', url: 'https://t.me/solkah_bot' }]
+        [{ text: '📲Ouvrir le Bot', url: 'https://t.me/xgamabot_bot' }]
       ]
     };
   }
