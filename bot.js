@@ -267,7 +267,7 @@ function generateRandomAd() {
       parse_mode: 'Markdown',
       buttons: [
         [{ text: '🚀 Créer mon compte', url: 'https://bit.ly/3NJ4vy0' }],
-        [{ text: '🔒 Canal VIP', url: 'https://t.me/solkah_bot' }]
+        [{ text: '🔒 Canal VIP', url: 'https://t.me/+NyXd7yx4eac3YWZk' }]
       ]
     };
   }
@@ -283,7 +283,7 @@ function generateRandomAd() {
       parse_mode: 'Markdown',
       buttons: [
         [{ text: '🍏 Jouer maintenant', url: 'https://bit.ly/3NJ4vy0' }],
-        [{ text: '📲 Astuces + Bot', url: 'https://t.me/solkah_bot' }]
+        [{ text: '📲Ouvrir le Bot', url: 'https://t.me/solkah_bot' }]
       ]
     };
   }
@@ -298,7 +298,7 @@ function generateRandomAd() {
     parse_mode: 'Markdown',
     buttons: [
       [{ text: '🎯 Essayer Apple of Fortune', url: 'https://bit.ly/3NJ4vy0' }],
-      [{ text: '🎓 Canal stratégique', url: 'https://t.me/solkah_bot' }]
+      [{ text: '🎓acceder au Hack', url: 'https://t.me/xgamabot_bot' }]
     ]
   };
 }
