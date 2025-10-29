@@ -237,19 +237,19 @@ process.once('SIGTERM', () => bot.stop('SIGTERM'));
 // --- Ajout de la logique ADS dynamique ---
 
 const captionsGameplay = [
-  `👀 Ce qu'ils ne veulent pas que tu saches... Ce jeu est en train de changer des vies en silence.\n\n🍏 C’est *Apple of Fortune*, et il suffit de comprendre la logique pour encaisser.\n\n➡️ Crée ton compte ici : [Clique ici](https://bit.ly/3NJ4vy0)`,
-  `🧠 Tout le monde pense que c’est de la chance... mais ceux qui testent comprennent vite : *Apple of Fortune*, c’est une stratégie mentale.\n\nPrêt à essayer ? [Créer un compte](https://bit.ly/3NJ4vy0)`,
-  `💡 Joue comme un stratège, pas comme un parieur. *Apple of Fortune* récompense ceux qui osent réfléchir.\n\nCommence maintenant : [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`,
-  `😶 On peut regarder les autres réussir… ou simplement prendre 2 min pour s’y mettre aussi.\n\n🍏 Apple of Fortune t’attend ici : [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`,
-  `🚪 Ils ont ouvert la porte, mais peu osent rentrer. Apple of Fortune c’est pour ceux qui *jouent avec la tête*, pas avec la chance.\n\n➡️ Crée ton compte ici : [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`
+  `👀 Ce qu'ils ne veulent pas que tu saches... Ce jeu est en train de changer des vies en silence.\n\n🍏 C’est *Apple of Fortune*, et il suffit de comprendre la logique pour encaisser.\n\n➡️ Crée ton compte ici : [Clique ici](https://cut.solkah.org/1xbet)`,
+  `🧠 Tout le monde pense que c’est de la chance... mais ceux qui testent comprennent vite : *Apple of Fortune*, c’est une stratégie mentale.\n\nPrêt à essayer ? [Créer un compte](https://cut.solkah.org/1xbet)`,
+  `💡 Joue comme un stratège, pas comme un parieur. *Apple of Fortune* récompense ceux qui osent réfléchir.\n\nCommence maintenant : [bit.ly/3NJ4vy0](https://cut.solkah.org/1xbet)`,
+  `😶 On peut regarder les autres réussir… ou simplement prendre 2 min pour s’y mettre aussi.\n\n🍏 Apple of Fortune t’attend ici : [bit.ly/3NJ4vy0](https://cut.solkah.org/1xbet)`,
+  `🚪 Ils ont ouvert la porte, mais peu osent rentrer. Apple of Fortune c’est pour ceux qui *jouent avec la tête*, pas avec la chance.\n\n➡️ Crée ton compte ici : [bit.ly/3NJ4vy0](https://cut.solkah.org/1xbet)`
 ];
 
 const captionsCapture = [
-  `📸 Ils partagent leur preuve. Apple of Fortune, ce n’est pas que du rêve. C’est une *routine* pour ceux qui s’y mettent sérieusement.\n\n🎯 À toi de jouer : [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`,
-  `🔍 Une capture ne ment pas. Il faut juste OSER tenter une fois. Les résultats parlent d’eux-mêmes.\n\n🎰 Crée ton compte ici : [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`,
-  `🧠 La vraie stratégie, c’est celle qu’on ne crie pas sur tous les toits. Mais tu peux la découvrir en testant maintenant.\n\nApple of Fortune ici ➤ [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`,
-  `📲 Pendant que tu scrolles… d’autres enchaînent les réussites en silence.\n\n🍏 Tente Apple of Fortune maintenant ➤ [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`,
-  `🔐 Ce qui est rentable reste souvent discret. Mais tu viens de trouver la faille.\n\n➡️ Ouvre ton compte ici : [bit.ly/3NJ4vy0](https://bit.ly/3NJ4vy0)`
+  `📸 Ils partagent leur preuve. Apple of Fortune, ce n’est pas que du rêve. C’est une *routine* pour ceux qui s’y mettent sérieusement.\n\n🎯 À toi de jouer : [bit.ly/3NJ4vy0](https://cut.solkah.org/1xbet)`,
+  `🔍 Une capture ne ment pas. Il faut juste OSER tenter une fois. Les résultats parlent d’eux-mêmes.\n\n🎰 Crée ton compte ici : [bit.ly/3NJ4vy0](https://cut.solkah.org/1xbet)`,
+  `🧠 La vraie stratégie, c’est celle qu’on ne crie pas sur tous les toits. Mais tu peux la découvrir en testant maintenant.\n\nApple of Fortune ici ➤ [bit.ly/3NJ4vy0](https://cut.solkah.org/1xbet)`,
+  `📲 Pendant que tu scrolles… d’autres enchaînent les réussites en silence.\n\n🍏 Tente Apple of Fortune maintenant ➤ [bit.ly/3NJ4vy0](https://cut.solkah.org/1xbet)`,
+  `🔐 Ce qui est rentable reste souvent discret. Mais tu viens de trouver la faille.\n\n➡️ Ouvre ton compte ici : [bit.ly/3NJ4vy0](https://cut.solkah.org/1xbet)`
 ];
 
 function getRandomInt(min, max) {
@@ -266,7 +266,7 @@ function generateRandomAd() {
       caption: `💸 *100$ par jour ?* Facile quand tu sais comment jouer.\n\n🏱 REGARDE le tuto pour créer un compte authentique et profiter des hacks...\n\n🔥 Rejoins aussi notre canal privé ➤ https://t.me/+omaJ1VufdHs1NGZk`,
       parse_mode: 'Markdown',
       buttons: [
-        [{ text: '🚀 Créer mon compte', url: 'https://bit.ly/3NJ4vy0' }],
+        [{ text: '🚀 Créer mon compte', url: 'https://cut.solkah.org/1xbet' }],
         [{ text: '🔒 Canal VIP', url: 'https://t.me/+NyXd7yx4eac3YWZk' }]
       ]
     };
@@ -282,7 +282,7 @@ function generateRandomAd() {
       caption,
       parse_mode: 'Markdown',
       buttons: [
-        [{ text: '🍏 Jouer maintenant', url: 'https://bit.ly/3NJ4vy0' }],
+        [{ text: '🍏 Jouer maintenant', url: 'https://cut.solkah.org/1xbet' }],
         [{ text: '📲Ouvrir le Bot', url: 'https://t.me/xgamabot_bot' }]
       ]
     };
@@ -297,7 +297,7 @@ function generateRandomAd() {
     caption,
     parse_mode: 'Markdown',
     buttons: [
-      [{ text: '🎯 Essayer Apple of Fortune', url: 'https://bit.ly/3NJ4vy0' }],
+      [{ text: '🎯 Essayer Apple of Fortune', url: 'https://cut.solkah.org/1xbet' }],
       [{ text: '🎓acceder au Hack', url: 'https://t.me/xgamabot_bot' }]
     ]
   };
